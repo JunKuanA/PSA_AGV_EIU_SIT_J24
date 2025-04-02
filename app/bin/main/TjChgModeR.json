@@ -1,0 +1,76 @@
+{
+    "title": "TJ_CHG_MODE_R",
+    "description": "Request for selected Junction Controller's status information",
+    "type": "object",
+    "properties": {
+        "gtosplusOpsHeader": {
+            "type": "object",
+            "properties": {
+                "source_m": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9]*$",
+                    "maxLength": 12
+                },
+                "event_dt": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9-.:]*$",
+                    "maxLength": 28
+                },
+                "event_id": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9-]*$",
+                    "maxLength": 34
+                },
+                "trans_id": {
+                    "type": "string",
+                    "maxLength": 27,
+                    "enum": [
+                        "tj_chg_mode_r",
+                        "TJ_CHG_MODE_R"
+                    ]
+                }
+            },
+            "required": [
+                "source_m",
+                "event_dt",
+                "event_id",
+                "trans_id"
+            ]
+        },
+        "gtosplusOpsBody":{
+            "type": "object",
+            "properties": {
+		        "error_c": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9]*$",
+                    "maxLength": 15
+                },
+                "error_txt": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9]*$",
+                    "maxLength": 15
+                },
+                "tj_id": {
+                "type": "integer"
+                },
+                "tj_m": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9]*$",
+                    "maxLength": 15
+                },
+                "curr_tj_mode_c": {
+                    "type": "string",
+                    "maxLength": 8
+                },
+                "required": [
+                    "error_c",
+                    "error_txt",
+                    "tj_id",
+                    "tj_m",
+                    "curr_tj_mode_c"
+                ],
+                "additionalProperties": false
+            }
+        }
+    }
+}

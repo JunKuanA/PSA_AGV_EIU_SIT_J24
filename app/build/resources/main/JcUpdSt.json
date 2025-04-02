@@ -1,0 +1,64 @@
+{
+    "title": "JC_UPD_ST",
+    "description": "Request for junction to change phase",
+    "type": "object",
+    "properties": {
+        "gtosplusOpsHeader": {
+            "type": "object",
+            "properties": {
+                "source_m": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9]*$",
+                    "maxLength": 12
+                },
+                "event_dt": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9-.:]*$",
+                    "maxLength": 28
+                },
+                "event_id": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9-]*$",
+                    "maxLength": 34
+                },
+                "trans_id": {
+                    "type": "string",
+                    "maxLength": 27,
+                    "enum": [
+                        "jc_upd_st",
+                        "JC_UPD_ST"
+                    ]
+                }
+            },
+            "required": [
+                "source_m",
+                "event_dt",
+                "event_id",
+                "trans_id"
+            ]
+        },
+        "gtosplusOpsBody":{
+            "type": "object",
+            "properties": {
+                "jc_id": {
+                "type": "integer"
+                },
+                "jc_m": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9]*$",
+                    "maxLength": 15
+                },
+                "new_jc_status_c": {
+                    "type": "string",
+                    "maxLength": 8
+                },
+                "required": [
+                    "jc_id",
+                    "jc_m",
+                    "new_jc_status_c"
+                ],
+                "additionalProperties": false
+            }
+        }
+    }
+}

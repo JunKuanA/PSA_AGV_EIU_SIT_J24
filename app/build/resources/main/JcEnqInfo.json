@@ -1,0 +1,59 @@
+{
+    "title": "JC_ENQ_INFO",
+    "description": "Request for junction information",
+    "type": "object",
+    "properties": {
+        "gtosplusOpsHeader": {
+            "type": "object",
+            "properties": {
+                "source_m": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9]*$",
+                    "maxLength": 12
+                },
+                "event_dt": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9-.:]*$",
+                    "maxLength": 28
+                },
+                "event_id": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9-]*$",
+                    "maxLength": 34
+                },
+                "trans_id": {
+                    "type": "string",
+                    "maxLength": 27,
+                    "enum": [
+                        "JC_ENQ_INFO",
+                        "jc_enq_info"
+                    ]
+                }
+            },
+            "required": [
+                "source_m",
+                "event_dt",
+                "event_id",
+                "trans_id"
+            ]
+        },
+        "gtosplusOpsBody":{
+            "type": "object",
+            "properties": {
+                "jc_id": {
+                "type": "integer"
+                },
+                "jc_m": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9]*$",
+                    "maxLength": 15
+                },
+                "required": [
+                    "jc_id",
+                    "jc_m"
+                ],
+                "additionalProperties": false
+            }
+        }
+    }
+}

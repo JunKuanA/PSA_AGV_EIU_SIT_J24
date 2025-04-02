@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Main-Class: psa_agv_eiu_debug.App
+

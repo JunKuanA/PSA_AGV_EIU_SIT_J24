@@ -1,0 +1,71 @@
+{
+    "title": "JC_RST_ALRM",
+    "description": "Request for junction to reset phase",
+    "type": "object",
+    "properties": {
+        "gtosplusOpsHeader": {
+            "type": "object",
+            "properties": {
+                "source_m": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9]*$",
+                    "maxLength": 12
+                },
+                "event_dt": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9-.:]*$",
+                    "maxLength": 28
+                },
+                "event_id": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9-]*$",
+                    "maxLength": 34
+                },
+                "trans_id": {
+                    "type": "string",
+                    "maxLength": 27,
+                    "enum": [
+                        "aa_eqpt_instr",
+                        "AA_EQPT_INSTR"
+                    ]
+                }
+            },
+            "required": [
+                "source_m",
+                "event_dt",
+                "event_id",
+                "trans_id"
+            ]
+        },
+        "gtosplusOpsBody":{
+            "type": "object",
+            "properties": {
+                "jc_id": {
+                "type": "integer"
+                },
+                "jc_m": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9]*$",
+                    "maxLength": 15
+                },
+                "num_of_faults": {
+                    "type": "integer"
+                },
+                "fault_code_desc_list": {
+                    "type": "array",
+                    "properties":{
+                        "fault_code":{
+                            "type":"integer"
+                        }
+                    }
+                },
+                "required": [
+                    "jc_id",
+                    "jc_m",
+                    "num_of_faults"
+                ],
+                "additionalProperties": false
+            }
+        }
+    }
+}

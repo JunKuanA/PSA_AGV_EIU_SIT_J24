@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="eiuAPP" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>module.entities.equipment_info</class>
+    <class>module.entities.fault_code_desc_list</class>
+    <class>module.entities.jc_ack_r</class>
+    <class>module.entities.jc_alrm_info</class>
+    <class>module.entities.jc_enq_info</class>
+    <class>module.entities.jc_enq_info_r</class>
+    <class>module.entities.jc_hrtbt_info</class>
+    <class>module.entities.jc_pm_dtec_info</class>
+    <class>module.entities.jc_rst_alrm</class>
+    <class>module.entities.jc_rst_alrm_r</class>
+    <class>module.entities.jc_upd_st</class>
+    <class>module.entities.jc_upd_st_r</class>
+    <class>module.entities.jc_uturn_dtec_info</class>
+    <class>module.entities.pm_loop_list</class>
+    <class>module.entities.status_code_list</class>
+    <class>module.entities.uturn_loop_list</class>
+    <class>module.entities.tj_chg_mode_r</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/agv_eiu?useTimezone=true&amp;serverTimezone=Asia/Singapore"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="password"/>
+    </properties>
+  </persistence-unit>
+</persistence>
